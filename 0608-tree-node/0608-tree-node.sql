@@ -10,7 +10,7 @@
 select id, 
 case
  when p_id is null then 'Root'
- when id in(select p_id from tree) then 'Inner'
- else 'Leaf'
+ when id in(select p_id from tree) then 'Inner' -- jab id kise p_id ke undar ho 
+ else 'Leaf'                                    -- eg: id = 1 is p_id of id 2
 end as type
 from Tree;
